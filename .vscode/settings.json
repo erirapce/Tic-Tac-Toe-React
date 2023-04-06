@@ -1,0 +1,19 @@
+{
+  "files.exclude": {
+    "**/.git": false,
+    "**/.svn": false,
+    "**/.hg": false,
+    "**/CVS": false,
+    "**/.DS_Store": false,
+    "**/Thumbs.db": false,
+    "**/.build": false,
+    "**/.classpath": false,
+    "**/.factorypath": false,
+    "**/.project": false,
+    "**/.settings": false,
+    "**/*.Identifier": false,
+    "**/node_modules": false,
+    "**/target": false
+  },
+  "explorerExclude.backup": {}
+}
