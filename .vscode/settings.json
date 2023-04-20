@@ -1,19 +1,19 @@
 {
   "files.exclude": {
-    "**/.git": false,
-    "**/.svn": false,
-    "**/.hg": false,
-    "**/CVS": false,
-    "**/.DS_Store": false,
-    "**/Thumbs.db": false,
-    "**/.build": false,
-    "**/.classpath": false,
-    "**/.factorypath": false,
-    "**/.project": false,
-    "**/.settings": false,
-    "**/*.Identifier": false,
-    "**/node_modules": false,
-    "**/target": false
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.build": true,
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/*.Identifier": true,
+    "**/node_modules": true,
+    "**/target": true
   },
   "explorerExclude.backup": {}
 }
