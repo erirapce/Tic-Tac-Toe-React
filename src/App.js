@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 function Square({ value, onSquareClick }) {
   return (
@@ -15,9 +15,9 @@ function Board({ xIsNext, squares, onPlay }) {
     }
     const nextSquares = squares.slice();
     if (xIsNext) {
-      nextSquares[i] = 'X';
+      nextSquares[i] = "X";
     } else {
-      nextSquares[i] = 'O';
+      nextSquares[i] = "O";
     }
     onPlay(nextSquares);
   }
@@ -25,9 +25,9 @@ function Board({ xIsNext, squares, onPlay }) {
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
-    status = 'Winner: ' + winner;
+    status = "Winner: " + winner;
   } else {
-    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+    status = "Next player: " + (xIsNext ? "X" : "O");
   }
 
   return (
@@ -70,10 +70,12 @@ export default function Game() {
 
   const moves = history.map((squares, move) => {
     let description;
-    if (move > 0) {
-      description = 'Go to move #' + move;
+    if (move == currentMove) {
+      description = "You are at move #" + move;
+    } else if (move > 0) {
+      description = "Go to move #" + move;
     } else {
-      description = 'Go to game start';
+      description = "Go to game start";
     }
     return (
       <li key={move}>
