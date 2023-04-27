@@ -30,10 +30,25 @@ function Board({ xIsNext, squares, onPlay }) {
     status = "Next player: " + (xIsNext ? "X" : "O");
   }
 
+  function drawBoard() {
+    for (let row = 0; row < 3; row++) {
+      for (let col = 0; col < 3; col++) {
+        const squareNr = 3 * row + col;
+        return (
+          <Square
+            value={squares[squareNr]}
+            onSquareClick={() => handleClick(squareNr)}
+          ></Square>
+        );
+      }
+    }
+  }
+
   return (
     <>
       <div className="status">{status}</div>
-      <div className="board-row">
+      {drawBoard()}
+      {/* <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
         <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
@@ -47,7 +62,7 @@ function Board({ xIsNext, squares, onPlay }) {
         <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
         <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
         <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
-      </div>
+      </div> */}
     </>
   );
 }
