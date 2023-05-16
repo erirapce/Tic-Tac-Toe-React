@@ -30,20 +30,23 @@ function Board({ xIsNext, squares, onPlay }) {
     status = "Next player: " + (xIsNext ? "X" : "O");
   }
 
-  function drawRow(column) {
-    let row = [];
+  function drawRow(row, column) {
+    let rowTable = [];
     for (let i = 0; i < column; i++) {
-      row.push(
-        <Square value={squares[i]} onSquareClick={() => handleClick(i)} />
+      rowTable.push(
+        <Square
+          value={squares[3 * row + i]}
+          onSquareClick={() => handleClick(3 * row + i)}
+        />
       );
     }
-    return row;
+    return rowTable;
   }
 
   function drawRows(rows) {
     let board = [];
     for (let row = 0; row < rows; row++) {
-      board.push(<div className="board-row">{drawRow(3)}</div>);
+      board.push(<div className="board-row">{drawRow(row, 3)}</div>);
     }
     return board;
   }
