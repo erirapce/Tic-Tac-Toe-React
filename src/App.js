@@ -65,6 +65,8 @@ export default function Game() {
   const xIsNext = currentMove % 2 === 0;
   const currentSquares = history[currentMove];
 
+  const [isAscending, setIsAscending] = useState(true);
+
   function handlePlay(nextSquares) {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
     setHistory(nextHistory);
@@ -95,13 +97,24 @@ export default function Game() {
     );
   });
 
+  function sortMoves() {
+    if (isAscending) return moves;
+    else {
+      const moves2 = [];
+      for (const item of moves) {
+        moves2.unshift(item);
+      }
+      return moves2;
+    }
+  }
+
   return (
     <div className="game">
       <div className="game-board">
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className="game-info">
-        <ol>{moves}</ol>
+        <ol>{sortMoves()}</ol>
       </div>
     </div>
   );
