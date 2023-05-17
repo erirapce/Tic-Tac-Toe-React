@@ -114,6 +114,9 @@ export default function Game() {
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className="game-info">
+        <button onClick={() => setIsAscending(!isAscending)}>
+          {isAscending ? "Descending" : "Ascending"}
+        </button>
         <ol>{sortMoves()}</ol>
       </div>
     </div>
